@@ -1,0 +1,26 @@
+<div class="login-container">
+  <header>
+    <div class="logo-container">
+      <img src="https://i.imgur.com/HJ5XnN9.png" alt="Accenti Logo" class="logo">
+      <span class="logo-text">Accenti</span>
+    </div>
+  </header>
+  <div class="separator"></div>
+  <div class="login-form-container">
+    <h1><strong>Bienvenido a Accenti</strong></h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      
+      <h5>Iniciar sesión</h5>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" formControlName="password" required>
+      </div>
+      <a href="#" class="forgot-password">Olvidé mi contraseña</a>
+      <button type="submit" [disabled]="!loginForm.valid">Iniciar sesión</button>
+    </form>
+  </div>
+</div>

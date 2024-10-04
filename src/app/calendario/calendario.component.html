@@ -1,0 +1,62 @@
+<div class="calendar-container">
+    <header>
+      <div class="logo-container">
+        <img src="assets/accenti-logo.png" alt="Accenti Logo" class="logo">
+        <span class="logo-text">Accenti</span>
+      </div>
+      <div class="search-container">
+        <input type="text" placeholder="Buscar" class="search-input">
+      </div>
+      <div class="user-actions">
+        <button class="icon-button"><i class="fas fa-cog"></i></button>
+        <button class="icon-button"><i class="fas fa-bell"></i></button>
+        <img src="assets/user-avatar.png" alt="User Avatar" class="user-avatar">
+      </div>
+    </header>
+  
+    <nav class="sidebar">
+      <button class="nav-button"><i class="fas fa-home"></i></button>
+      <button class="nav-button"><i class="fas fa-users"></i></button>
+      <button class="nav-button"><i class="fas fa-comments"></i></button>
+    </nav>
+  
+    <main>
+      <div class="tabs">
+        <button class="tab">Etapas del proyecto</button>
+        <button class="tab active">Calendario</button>
+        <button class="tab">Documentos</button>
+      </div>
+  
+      <h1>Calendario del proyecto</h1>
+  
+      <div class="calendar">
+        <div class="calendar-header">
+          <div>SUN</div>
+          <div>MON</div>
+          <div>TUE</div>
+          <div>WED</div>
+          <div>THU</div>
+          <div>FRI</div>
+          <div>SAT</div>
+        </div>
+        <div class="calendar-body">
+          <div *ngFor="let day of calendarDays" class="calendar-day">
+            <div class="date">{{ day.date }}</div>
+            <div *ngFor="let event of day.events" class="event">{{ event }}</div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="meetings">
+        <h2>Tus reuniones</h2>
+        <div *ngFor="let meeting of meetings" class="meeting">
+          <i class="fas fa-comments"></i>
+          <div>
+            <div class="meeting-title">{{ meeting.title }}</div>
+            <div class="meeting-date">{{ meeting.date }}</div>
+          </div>
+        </div>
+        <button class="schedule-meeting">Programar reunión</button>
+      </div>
+    </main>
+  </div>
