@@ -1,0 +1,84 @@
+<div class="calendar-container">
+    <header>
+        <div class="logo-container">
+            <img src="https://i.imgur.com/HJ5XnN9.png" alt="Accenti Logo" class="logo">
+            <span class="logo-text">Accenti</span>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Buscar" class="search-input">
+        </div>
+        <div class="user-actions">
+            <button class="icon-button"><i class="fas fa-cog"></i></button>
+            <button class="icon-button"><i class="fas fa-bell"></i></button>
+            <img src="https://i.imgur.com/HJ5XnN9.png" alt="User Avatar" class="user-avatar">
+        </div>
+    </header>
+
+    <nav class="sidebar">
+        <button src="https://i.imgur.com/HJ5XnN9.png" alt="User Avatar" class="nav-button"><i
+                class="fas fa-home"></i></button>
+        <button class="nav-button"><i class="fas fa-users"></i></button>
+        <button class="nav-button"><i class="fas fa-comments"></i></button>
+
+        <div class="nav-footer">
+            <button class="nav-button">
+                <i class="fas fa-sign-out-alt"></i> <!-- Icono de salir -->
+            </button>
+            <button class="nav-button">
+                <i class="fas fa-question-circle"></i> <!-- Icono de dudas -->
+            </button>
+        </div>
+
+    </nav>
+
+    <main >
+        
+        <h1>Workspace</h1>
+
+        <div class="workspace">
+
+            <div class="filters">
+                <select>
+                    <option>Equipo de mensajes</option>
+                </select>
+                <select>
+                    <option>Filtrar documentos</option>
+                </select>
+
+                <button (click)="generateReport()" class="report" >Reporte</button>
+            </div>
+            <p>{{ completedTasks }} tareas completadas de {{ totalTasks }}</p>
+            <button (click)="markAllAsDone()">Marcar todo como hecho</button>
+
+            <div class="tasks">
+                <div *ngFor="let task of tasks" class="task">
+                    <img [src]="task.avatar" [alt]="task.assignee">
+                    <div>
+                        <h3>{{ task.assignee }}</h3>
+                        <p>{{ task.title }}</p>
+                        <p>{{ task.description }}</p>
+                    </div>
+                    <span>{{ task.time }}</span>
+                    <button>{{ task.status }}</button>
+                    <button *ngIf="task.assignee === 'Juan (recolector de requisitos)'"
+                        (click)="categorizeProgress()">Categorizar el progreso</button>
+                </div>
+            </div>
+
+            <div class="chat">
+                <div *ngFor="let message of messages" class="message"
+                    [ngClass]="{'sent': message.sender !== 'Juan (recolector de requisitos)', 'received': message.sender === 'Juan (recolector de requisitos)'}">
+                    <img [src]="message.avatar" [alt]="message.sender">
+                    <div>
+                        <h4>{{ message.sender }}</h4>
+                        <p>{{ message.content }}</p>
+                    </div>
+                </div>
+                <div class="message-input">
+                    <input type="text" placeholder="Escribir...">
+                    <button>Enviar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -93,99 +93,114 @@
   margin-bottom: 1rem;
 }
 
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 
-  main {
+
+main {
     margin-left: 60px;
     padding: 2rem;
   }
   
-  .tabs {
+.workspace {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color:#D3D3D3;
+    color: black;
+  }
+  
+  
+  
+  .filters {
     display: flex;
-    margin-bottom: 2rem;
+    gap: 10px;
+    margin-bottom: 20px;
   }
   
-  .tab {
-    padding: 0.5rem 1rem;
+  .report {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido hacia la derecha */
+    padding: 10px; /* Opcional, para añadir algo de espacio alrededor */
+  }
+  
+  select, button {
+    padding: 5px 10px;
+    background-color: #fff;
+    color: black;
     border: none;
-    background: none;
-    cursor: pointer;
-  }
-  
-  .tab.active {
-    border-bottom: 2px solid #0056b3;
-    color: #0056b3;
-  }
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .calendar {
-    border: 1px solid #e0e0e0;
     border-radius: 4px;
   }
   
-  .calendar-header {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    background-color: #f8f9fa;
-    padding: 0.5rem;
-    font-weight: bold;
+  .tasks {
+    margin-bottom: 20px;
   }
   
-  .calendar-body {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-  }
-  
-  .calendar-day {
-    border: 1px solid #e0e0e0;
-    padding: 0.5rem;
-    min-height: 100px;
-  }
-  
-  .date {
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .event {
-    background-color: #e0e0e0;
-    padding: 0.25rem;
-    margin-bottom: 0.25rem; 
-    font-size: 0.8rem;
-  }
-  
-  .meetings {
-    margin-top: 2rem;
-  }
-  
-  .meeting {
+  .task {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    gap: 10px;
+    background-color: #D3D3D3;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
   }
   
-  .meeting i {
-    margin-right: 1rem;
-    font-size: 1.5rem;
+  .task img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
   }
   
-  .meeting-title {
-    font-weight: bold;
+  .chat {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 4px;
   }
   
-  .meeting-date {
-    font-size: 0.8rem;
-    color: #666;
+  .message {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
   }
   
-  .schedule-meeting {
-    background-color: #000000;
-    color: white;
+  .message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .sent {
+    justify-content: flex-end;
+  }
+  
+  .received {
+    justify-content: flex-start;
+  }
+  
+  .message-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .message-input input {
+    flex-grow: 1;
+    padding: 5px;
+    background-color: #333;
+    color: #fff;
     border: none;
-    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  .message-input button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
   }

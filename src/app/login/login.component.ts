@@ -25,4 +25,5 @@ export class LoginComponent {
       // Aquí iría la lógica para enviar los datos al servidor
     }
   }
+  
 }
